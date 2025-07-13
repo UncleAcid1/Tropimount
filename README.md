@@ -5,6 +5,6 @@
 This mod is entirely based off of Tropicraft, though it is not required as a dependency. All credit to Dany except for the
 entity code. :D
 
-![alt text](https://github.com/UncleAcid1/Voidcalls/blob/main/banner.jpg)
+![alt text](https://github.com/UncleAcid1/Tropimount/blob/main/img.png)
 
 I had to recreate a lot at one point cause Idk how to use github! :D
