@@ -14,9 +14,7 @@ import net.mine_diver.unsafeevents.listener.EventListener;
 @Entrypoint
 public class Tropimount {
 
-    @Entrypoint.Namespace
-    public static Namespace NAMESPACE;
-
+    public static final Namespace NAMESPACE = Namespace.of("tropimount");
 
     @EventListener
     public void registerEntities(EntityRegister event) {
