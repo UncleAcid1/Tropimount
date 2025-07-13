@@ -20,16 +20,19 @@ public abstract class AttackingAnimalEntity extends AnimalEntity {
     }
 
     @SuppressWarnings("unused")
-    public void setAttackDamage(int attackDamage){
+    public void setAttackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
     }
 
     @Override
     public boolean canSpawn() {
+        if (Tropimount.NAMESPACE == null) return false;
+        TagKey tag = TagKey.of(BlockRegistry.INSTANCE.getKey(), Tropimount.NAMESPACE.id("bamboo_grows_on"));
         int blockX = MathHelper.floor(this.x);
         int blockY = MathHelper.floor(this.boundingBox.minY);
         int blockZ = MathHelper.floor(this.z);
-        return this.world.getBlockState(blockX, blockY -1, blockZ).isIn(TagKey.of(BlockRegistry.INSTANCE.getKey(), Tropimount.NAMESPACE.id("bamboo_grows_on"))) && this.world.getBrightness(blockX, blockY, blockZ) > 8;
+        return this.world.getBlockState(blockX, blockY - 1, blockZ).isIn(tag)
+                && this.world.getBrightness(blockX, blockY, blockZ) > 8;
     }
 
     @Override

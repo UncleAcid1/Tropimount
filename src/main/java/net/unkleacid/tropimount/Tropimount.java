@@ -7,9 +7,11 @@ import net.modificationstation.stationapi.api.client.event.texture.TextureRegist
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
 import net.modificationstation.stationapi.api.client.texture.atlas.ExpandableAtlas;
 import net.modificationstation.stationapi.api.event.entity.EntityRegister;
+import net.modificationstation.stationapi.api.event.registry.EntityHandlerRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.mine_diver.unsafeevents.listener.EventListener;
+import net.modificationstation.stationapi.api.event.registry.EntityHandlerRegistryEvent;
 
 @Entrypoint
 public class Tropimount {
@@ -19,6 +21,15 @@ public class Tropimount {
     @EventListener
     public void registerEntities(EntityRegister event) {
         event.register(IguanaEntity.class, "ridingiguana");
+    }
+
+    @EventListener
+    public void registerEntityHandlers(EntityHandlerRegistryEvent event) {
+        event.register(Tropimount.NAMESPACE.id("ridingiguana"), (world, x, y, z) -> {
+            IguanaEntity entity = new IguanaEntity(world);
+            entity.setPosition(x, y, z);
+            return entity;
+        });
     }
 
     @EventListener
