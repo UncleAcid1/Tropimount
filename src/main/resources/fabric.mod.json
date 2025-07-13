@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "tropimount",
+  "version": "1.0.0",
+
+  "name": "Tropimount",
+  "description": "A little (huge) iguana amount to find in your world and ride like a horse! Based entirely off of the code of Tropicraft by DanyGames2014, edited to add in Riding Iguana.",
+  "authors": [
+    "DanyGames2014, UnkleAcid"
+  ],
+
+  "license": "MIT",
+  "icon": "assets/tropimount/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationapi:event_bus": [
+      "net.unkleacid.tropimount.Tropicraft",
+      "net.unkleacid.tropimount.init.EntitySpawnListener"
+    ],
+    "stationapi:event_bus_client": [],
+    "stationapi:event_bus_server": []
+  },
+
+  "mixins": [
+    "tropimount.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "station-api-base": "*"
+  }
+}
