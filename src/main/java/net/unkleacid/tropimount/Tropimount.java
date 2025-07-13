@@ -12,7 +12,7 @@ import net.modificationstation.stationapi.api.util.Namespace;
 import net.mine_diver.unsafeevents.listener.EventListener;
 
 @Entrypoint
-public class Tropicraft {
+public class Tropimount {
 
     @Entrypoint.Namespace
     public static Namespace NAMESPACE;

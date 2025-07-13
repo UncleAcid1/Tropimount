@@ -1,6 +1,6 @@
 package net.unkleacid.tropimount.entity;
 
-import net.unkleacid.tropimount.Tropicraft;
+import net.unkleacid.tropimount.Tropimount;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.util.math.MathHelper;
@@ -29,7 +29,7 @@ public abstract class AttackingAnimalEntity extends AnimalEntity {
         int blockX = MathHelper.floor(this.x);
         int blockY = MathHelper.floor(this.boundingBox.minY);
         int blockZ = MathHelper.floor(this.z);
-        return this.world.getBlockState(blockX, blockY -1, blockZ).isIn(TagKey.of(BlockRegistry.INSTANCE.getKey(), Tropicraft.NAMESPACE.id("bamboo_grows_on"))) && this.world.getBrightness(blockX, blockY, blockZ) > 8;
+        return this.world.getBlockState(blockX, blockY -1, blockZ).isIn(TagKey.of(BlockRegistry.INSTANCE.getKey(), Tropimount.NAMESPACE.id("bamboo_grows_on"))) && this.world.getBrightness(blockX, blockY, blockZ) > 8;
     }
 
     @Override

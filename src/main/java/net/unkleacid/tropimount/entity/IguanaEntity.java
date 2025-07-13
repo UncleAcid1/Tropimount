@@ -1,6 +1,6 @@
 package net.unkleacid.tropimount.entity;
 
-import net.unkleacid.tropimount.Tropicraft;
+import net.unkleacid.tropimount.Tropimount;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,7 +38,7 @@ public class IguanaEntity extends AttackingAnimalEntity implements MobSpawnDataP
 
     @Override
     public Identifier getHandlerIdentifier() {
-        return Tropicraft.NAMESPACE.id("ridingiguana");
+        return Tropimount.NAMESPACE.id("ridingiguana");
     }
 
     @Override
@@ -107,7 +107,7 @@ public class IguanaEntity extends AttackingAnimalEntity implements MobSpawnDataP
         PlayerEntity rider = this.passenger instanceof PlayerEntity ? (PlayerEntity) this.passenger : null;
 
         if (!this.world.isRemote && rider != null) {
-            float forwardSpeed = 20.6F;
+            float forwardSpeed = 27.6F;
             float sideSpeed = 10.3F;
             float backSpeed = 10.3F;
 
@@ -146,7 +146,7 @@ public class IguanaEntity extends AttackingAnimalEntity implements MobSpawnDataP
             float delta = targetYaw - this.yaw;
             while (delta < -180) delta += 360;
             while (delta > 180) delta -= 360;
-            float rotationFactor = 0.12F;
+            float rotationFactor = 0.22F;
             this.yaw += delta * rotationFactor;
             this.prevYaw = this.yaw;
 
