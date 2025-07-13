@@ -11,7 +11,7 @@ import net.modificationstation.stationapi.api.tag.TagKey;
 import net.modificationstation.stationapi.api.util.TriState;
 
 @HasTrackingParameters(updatePeriod = 2, sendVelocity = TriState.TRUE, trackingDistance = 30)
-public class AttackingAnimalEntity extends AnimalEntity {
+public abstract class AttackingAnimalEntity extends AnimalEntity {
     public int attackDamage = 1;
 
     public AttackingAnimalEntity(World world) {
@@ -48,4 +48,7 @@ public class AttackingAnimalEntity extends AnimalEntity {
             }
         }
     }
+
+    // Prevent fall damage
+    protected abstract void handleFallDamage(float fallDistance);
 }
