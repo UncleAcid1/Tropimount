@@ -15,10 +15,17 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "net.unkleacid.tropimount.init.EntitySpawnListener"
+      "net.unkleacid.tropimount.init.EntitySpawnListener",
+      "net.unkleacid.tropimount.Tropimount"
     ],
-    "stationapi:event_bus_client": ["net.unkleacid.tropimount.Tropimount"],
-    "stationapi:event_bus_server": []
+    "stationapi:event_bus_client": ["net.unkleacid.tropimount.client.TropimountClient"],
+    "stationapi:event_bus_server": [],
+    "server": [],
+    "fabric-datagen": [],
+    "client": [],
+    "main": [],
+    "fabric-gametest": [],
+    "preLaunch": []
   },
 
   "mixins": [

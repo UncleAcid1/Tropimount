@@ -1,17 +1,14 @@
 package net.unkleacid.tropimount;
 
+import net.modificationstation.stationapi.api.util.Identifier;
 import net.unkleacid.tropimount.entity.IguanaEntity;
 import net.unkleacid.tropimount.entity.renderer.IguanaRenderer;
 import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
-import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
-import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
-import net.modificationstation.stationapi.api.client.texture.atlas.ExpandableAtlas;
 import net.modificationstation.stationapi.api.event.entity.EntityRegister;
 import net.modificationstation.stationapi.api.event.registry.EntityHandlerRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.modificationstation.stationapi.api.event.registry.EntityHandlerRegistryEvent;
 
 @Entrypoint
 public class Tropimount {
@@ -25,9 +22,8 @@ public class Tropimount {
 
     @EventListener
     public void registerEntityHandlers(EntityHandlerRegistryEvent event) {
-        event.register(Tropimount.NAMESPACE.id("ridingiguana"), (world, x, y, z) -> {
+        event.register(Identifier.of("ridingiguana"), (world, x, y, z) -> {
             IguanaEntity entity = new IguanaEntity(world);
-            entity.setPosition(x, y, z);
             return entity;
         });
     }
@@ -35,11 +31,5 @@ public class Tropimount {
     @EventListener
     public void registerEntityRenderers(EntityRendererRegisterEvent event) {
         event.renderers.put(IguanaEntity.class, new IguanaRenderer());
-    }
-
-    @EventListener
-    public void onTextureRegister(TextureRegisterEvent event) {
-        ExpandableAtlas atlas = Atlases.getTerrain();
-        atlas.addTexture(NAMESPACE.id("ridingiguana"));
     }
 }

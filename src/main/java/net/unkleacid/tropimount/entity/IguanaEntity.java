@@ -217,7 +217,7 @@ public class IguanaEntity extends AttackingAnimalEntity implements MobSpawnDataP
 
     @Override
     public double getPassengerRidingHeight() {
-        return this.height + 2.0D;
+        return this.height + 1.8D;
     }
 
     @Override
